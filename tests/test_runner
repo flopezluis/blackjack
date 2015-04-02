@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# Run the tests located in the provided path
+# Usage:
+#		$ ./test_runner <path|file>
+
+TEST_PATH=$1
+
+if [ ! -f "$TEST_PATH" ]
+then
+    TEST_PATH=. 
+fi
+
+PYTHONPATH= python -m pytest -s $TEST_PATH 
